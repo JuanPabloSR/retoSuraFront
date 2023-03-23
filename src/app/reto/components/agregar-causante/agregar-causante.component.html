@@ -1,0 +1,96 @@
+      <!-- INICIO REGISTRAR CAUSANTE -->
+      <h4 class="mb-3">Registrar el causante en ARUS</h4>
+      <!-- Tipo de documento -->
+      <div class="mb-3">
+        <label class="mb-2">Tipo de Identificación</label>
+        <select
+          class="form-control"
+          formControlName="tipoDocumento"
+          id="tipoDocumento"
+        >
+          <option value="cedulaCiudadania">Cédula de ciudadanía</option>
+          <option value="cedulaExtanjeria">Cédula de extranjería</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+        <span
+          class="form-text text-danger"
+          *ngIf="campoValido('tipoDocumento')"
+        >
+          Debe seleccionar una opción
+        </span>
+      </div>
+
+      <!-- Numero de documento -->
+      <div class="mb-3">
+        <label class="mb-2">Número de Documento</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Ingrese su número de documento"
+          formControlName="documento"
+        />
+        <span class="form-text text-danger" *ngIf="campoValido('documento')">
+          Este campo no puede estar vacío, debe tener mínimo 6 números
+        </span>
+      </div>
+
+      <!-- Nombres Causante -->
+      <div class="mb-3">
+        <label class="mb-2">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese sus nombres"
+          formControlName="documento"
+        />
+        <span class="form-text text-danger" *ngIf="campoValido('documento')">
+          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
+          50
+        </span>
+      </div>
+
+      <!-- Apellidos Causante -->
+      <div class="mb-3">
+        <label class="mb-2">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingrese sus nombres"
+          formControlName="documento"
+        />
+        <span class="form-text text-danger" *ngIf="campoValido('documento')">
+          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
+          50
+        </span>
+      </div>
+
+      <!-- Fecha de nacimiento Causante -->
+      <div class="mb-3">
+        <label class="mb-2">Fecha de nacimiento</label>
+        <input
+          type="date"
+          class="form-control"
+          placeholder="Ingrese su fecha de nacimiento"
+          formControlName="documento"
+        />
+        <span class="form-text text-danger" *ngIf="campoValido('documento')">
+          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
+          50
+        </span>
+      </div>
+
+      <!-- Genero causante -->
+      <div class="mb-3">
+        <label class="mb-2">Género</label>
+        <select class="form-control" formControlName="tipoDocumento">
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+        <span
+          class="form-text text-danger"
+          *ngIf="campoValido('tipoDocumento')"
+        >
+          Debe seleccionar una opción
+        </span>
+      </div>

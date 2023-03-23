@@ -1,0 +1,45 @@
+<!-- COMPROBAR CAUSANTE BD -->
+<h4 class="mb-3">Verifica que el causante exista en la base de datos</h4>
+
+<form [formGroup]="myForm" (ngSubmit)="consultar()">
+  <!-- Tipo de documento -->
+  <div class="mb-3">
+    <label class="mb-2">Tipo de Identificación</label>
+    <select
+      class="form-control"
+      formControlName="tipoDocumento"
+      id="tipoDocumento"
+    >
+      <option value="cedulaCiudadania">Cédula de ciudadanía</option>
+      <option value="cedulaExtanjeria">Cédula de extranjería</option>
+      <option value="pasaporte">Pasaporte</option>
+    </select>
+    <span class="form-text text-danger" *ngIf="campoValido('tipoDocumento')">
+      Debe seleccionar una opción
+    </span>
+  </div>
+  <!-- Numero de documento -->
+  <div class="mb-3">
+    <label class="mb-2">Número de Documento</label>
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Ingrese su número de documento"
+      formControlName="documento"
+    />
+    <span class="form-text text-danger" *ngIf="campoValido('documento')">
+      Este campo no puede estar vacío, debe tener mínimo 6 números
+    </span>
+  </div>
+  <!-- Boton consultar -->
+  <div class="mb-3">
+    <button
+      type="submit"
+      class="btn btn-primary mt-3 text-center"
+      [disabled]="myForm.pending"
+    >
+      Consultar
+    </button>
+  </div>
+</form>
+<!-- FINAL CONSULTAR CAUSANTE -->

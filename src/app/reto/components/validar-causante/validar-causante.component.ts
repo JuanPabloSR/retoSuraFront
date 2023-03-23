@@ -2,19 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registar-causante',
-  templateUrl: './registar-causante.component.html',
+  selector: 'app-validar-causante',
+  templateUrl: './validar-causante.component.html',
   styles: [
   ]
 })
-export class RegistarCausanteComponent implements OnInit {
+export class ValidarCausanteComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
     tipoDocumento: ['', [Validators.required]],
     documento: ['', [Validators.required, Validators.pattern(/^\d{6,}$/)]],
   })
-
-  constructor(private fb: FormBuilder, ) { }
+  constructor(private fb: FormBuilder,) { }
 
   ngOnInit(): void {
     this.myForm.reset({
@@ -37,5 +36,7 @@ export class RegistarCausanteComponent implements OnInit {
 
     console.log(this.myForm.value);
   }
+
+
 
 }

@@ -1,27 +1,12 @@
 <div class="container">
-  <h1>Registrar Causante</h1>
-  <hr>
-  <h3>Verifica que el causante exista en la base de datos</h3>
+  <div class="row justify-content-center">
+    <div class="col-md-6 my-auto">
+      <app-validar-causante></app-validar-causante>
 
-  <form  [formGroup]="myForm" (ngSubmit)="consultar()">
-    <div class="form-group mt-3">
-      <label >Tipo de Identificación:</label>
-      <select class="form-control"  formControlName="tipoDocumento">
-        <option value="cedulaCiudadania">Cédula de ciudadanía</option>
-        <option value="cedulaExtanjeria">Cédula de extranjería</option>
-        <option value="pasaporte">Pasaporte</option>
-      </select>
-      <span class="form-text text-danger"*ngIf="campoValido('tipoDocumento')">Debe seleccionar una opcion</span>
-    </div>
-    <div class="form-group mt-3">
-      <label for="numeroDocumento">Número de Documento:</label>
-      <input type="number" class="form-control" placeholder="Ingrese su numero de documento" formControlName="documento" >
-      <span class="form-text text-danger"*ngIf="campoValido('documento')">Este campo no puede estar vacio</span>
-    </div>
-    <button type="submit" class="btn btn-primary mt-3" [disabled]="myForm.pending" >Consultar</button>
-  </form>
+      <br>
+      <hr>
+      <app-agregar-causante></app-agregar-causante>
 
+    </div>
+  </div>
 </div>
-
-
-
