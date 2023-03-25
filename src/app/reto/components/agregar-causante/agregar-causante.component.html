@@ -1,96 +1,254 @@
-      <!-- INICIO REGISTRAR CAUSANTE -->
-      <h4 class="mb-3">Registrar el causante en ARUS</h4>
-      <!-- Tipo de documento -->
-      <div class="mb-3">
-        <label class="mb-2">Tipo de Identificación</label>
-        <select
-          class="form-control"
-          formControlName="tipoDocumento"
-          id="tipoDocumento"
-        >
-          <option value="cedulaCiudadania">Cédula de ciudadanía</option>
-          <option value="cedulaExtanjeria">Cédula de extranjería</option>
-          <option value="pasaporte">Pasaporte</option>
-        </select>
-        <span
-          class="form-text text-danger"
-          *ngIf="campoValido('tipoDocumento')"
-        >
-          Debe seleccionar una opción
-        </span>
-      </div>
+<!-- INICIO REGISTRAR CAUSANTE -->
+<h4 class="mb-3">Registrar el causante en ARUS</h4>
+<!-- Tipo de documento -->
 
-      <!-- Numero de documento -->
-      <div class="mb-3">
-        <label class="mb-2">Número de Documento</label>
-        <input
-          type="number"
-          class="form-control"
-          placeholder="Ingrese su número de documento"
-          formControlName="documento"
-        />
-        <span class="form-text text-danger" *ngIf="campoValido('documento')">
-          Este campo no puede estar vacío, debe tener mínimo 6 números
-        </span>
-      </div>
+<form [formGroup]="myForm" (ngSubmit)="agregar()">
+  <!-- FORMULARIO CAUSANTE -->
+  <div id="agregarCausante">
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person-vcard"> Tipo de Identificación</label>
+      <select
+        class="form-control"
+        formControlName="tipoDocumento"
+        id="tipoDocumento"
+      >
+        <option value="" disabled selected>Seleccione un tipo</option>
+        <option value="cedulaCiudadania">Cédula de ciudadanía</option>
+        <option value="cedulaExtanjeria">Cédula de extranjería</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('tipoDocumento')">
+        Debes seleccionar una opción
+      </span>
+    </div>
 
-      <!-- Nombres Causante -->
-      <div class="mb-3">
-        <label class="mb-2">Nombres</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Ingrese sus nombres"
-          formControlName="documento"
-        />
-        <span class="form-text text-danger" *ngIf="campoValido('documento')">
-          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
-          50
-        </span>
-      </div>
+    <!-- Numero de documento -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-123"> Número de Documento</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Ingrese su número de documento"
+        formControlName="documento"
+      />
+      <span errorSpan *ngIf="campoValido('documento')">
+        Este campo no puede estar vacío, debe tener mínimo 6 números
+      </span>
+    </div>
 
-      <!-- Apellidos Causante -->
-      <div class="mb-3">
-        <label class="mb-2">Apellidos</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Ingrese sus nombres"
-          formControlName="documento"
-        />
-        <span class="form-text text-danger" *ngIf="campoValido('documento')">
-          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
-          50
-        </span>
-      </div>
+    <!-- Nombres Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person-fill"> Nombres</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese sus nombres"
+        formControlName="nombres"
+      />
+      <span errorSpan *ngIf="campoValido('nombres')">
+        Este campo debe tener mínimo 3 letras y maximo 50
+      </span>
+    </div>
 
-      <!-- Fecha de nacimiento Causante -->
-      <div class="mb-3">
-        <label class="mb-2">Fecha de nacimiento</label>
-        <input
-          type="date"
-          class="form-control"
-          placeholder="Ingrese su fecha de nacimiento"
-          formControlName="documento"
-        />
-        <span class="form-text text-danger" *ngIf="campoValido('documento')">
-          Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo
-          50
-        </span>
-      </div>
+    <!-- Apellidos Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person"> Apellidos</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese sus nombres"
+        formControlName="apellidos"
+      />
+      <span errorSpan *ngIf="campoValido('apellidos')">
+        Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo 50
+      </span>
+    </div>
 
-      <!-- Genero causante -->
-      <div class="mb-3">
-        <label class="mb-2">Género</label>
-        <select class="form-control" formControlName="tipoDocumento">
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otro">Otro</option>
-        </select>
-        <span
-          class="form-text text-danger"
-          *ngIf="campoValido('tipoDocumento')"
-        >
-          Debe seleccionar una opción
-        </span>
-      </div>
+    <!-- Fecha de nacimiento Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-calendar3"> Fecha de nacimiento</label>
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Ingrese su fecha de nacimiento"
+        formControlName="fechaNacimiento"
+      />
+      <span errorSpan *ngIf="campoValido('fechaNacimiento')">
+        Este campo debe tener una fecha
+      </span>
+    </div>
+
+    <!-- Genero causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-fingerprint"> Género</label>
+      <select class="form-control" formControlName="genero">
+        <option value="" disabled selected>Seleccione un genero</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('genero')">
+        Debe seleccionar una opción de genero
+      </span>
+    </div>
+  </div>
+
+  <!-- FORMULARIO BENEFICIARIO -->
+  <div id="agregarCausante">
+    <h4 class="mb-3">Registrar el Beneficiario en ARUS</h4>
+
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person-vcard"> Tipo de Identificación</label>
+      <select
+        class="form-control"
+        formControlName="tipoDocumento"
+        id="tipoDocumento"
+      >
+        <option value="" disabled selected>Seleccione un tipo</option>
+        <option value="cedulaCiudadania">Cédula de ciudadanía</option>
+        <option value="cedulaExtanjeria">Cédula de extranjería</option>
+        <option value="pasaporte">Pasaporte</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('tipoDocumento')">
+        Debes seleccionar una opción
+      </span>
+    </div>
+
+    <!-- Numero de documento -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-123"> Número de Documento</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Ingrese su número de documento"
+        formControlName="documento"
+      />
+      <span errorSpan *ngIf="campoValido('documento')">
+        Este campo no puede estar vacío, debe tener mínimo 6 números
+      </span>
+    </div>
+
+    <!-- Nombres Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person-fill">Nombres</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese sus nombres"
+        formControlName="nombres"
+      />
+      <span errorSpan *ngIf="campoValido('nombres')">
+        Este campo debe tener mínimo 3 letras y maximo 50
+      </span>
+    </div>
+
+    <!-- Apellidos Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person"> Apellidos</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese sus nombres"
+        formControlName="apellidos"
+      />
+      <span errorSpan *ngIf="campoValido('apellidos')">
+        Este campo no puede estar vacío, debe tener mínimo 3 letras y maximo 50
+      </span>
+    </div>
+
+    <!-- Fecha de nacimiento Causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-calendar3"> Fecha de nacimiento</label>
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Ingrese su fecha de nacimiento"
+        formControlName="fechaNacimiento"
+      />
+      <span errorSpan *ngIf="campoValido('fechaNacimiento')">
+        Este campo debe tener una fecha
+      </span>
+    </div>
+
+    <!-- Genero causante -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-person-fill"> Género</label>
+      <select class="form-control" formControlName="genero">
+        <option value="" disabled selected>Seleccione un genero</option>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('genero')">
+        Debe seleccionar una opción de genero
+      </span>
+    </div>
+
+    <!-- Tipo de Beneficiario -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-file-person"> Tipo de Beneficiario</label>
+      <select class="form-control" formControlName="tipoBeneficiario">
+        <option value="" disabled selected>Seleccione un tipo</option>
+        <option value="hijo">Hijo/Hija</option>
+        <option value="conyuge">Cónyuge</option>
+        <option value="progenitor">Progenitor</option>
+        <option value="pareja">Pareja</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('tipoBeneficiario')">
+        Debe seleccionar una tipo de beneficiario
+      </span>
+    </div>
+
+    <!-- Estudia Actualmente -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-book"> Estudia Actualmente</label>
+      <select class="form-control" formControlName="estudiaActualmente">
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="si">Si</option>
+        <option value="no">No</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('estudiaActualmente')">
+        Debe seleccionar una opción
+      </span>
+    </div>
+
+    <!-- Depende Economicamente -->
+    <div class="mb-3">
+      <label class="mb-2 bi bi-currency-dollar">
+        Depende Economicamente del Causante</label
+      >
+      <select class="form-control" formControlName="dependeEconomicamente">
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="si">Si</option>
+        <option value="no">No</option>
+      </select>
+      <span errorSpan *ngIf="campoValido('dependeEconomicamente')">
+        Debe seleccionar una opción
+      </span>
+    </div>
+  </div>
+
+  <!-- Boton Agregar -->
+  <div class="mb-3">
+    <button
+      type="submit"
+      class="btn btn-outline-primary mt-3 bi bi-database-add"
+      [disabled]="myForm.pending"
+    >
+      Agregar
+    </button>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{ myForm.valid }}</pre>
+
+    <span>Touched</span>
+    <pre>{{ myForm.touched }}</pre>
+
+    <span>Value</span>
+    <pre>{{ myForm.value | json }}</pre>
+  </div>
+</div>

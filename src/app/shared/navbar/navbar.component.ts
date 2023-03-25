@@ -13,7 +13,6 @@ interface MenuItems {
     li {
       cursor:pointer;
     }
-
     `
   ]
 })

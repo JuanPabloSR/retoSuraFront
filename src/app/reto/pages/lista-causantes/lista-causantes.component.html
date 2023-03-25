@@ -1,25 +1,41 @@
 <div class="container">
   <h1>Lista de Causantes</h1>
   <br />
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Documento</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>123456789</td>
-        <td>
-          <a href="#" class="btn btn-primary me-2">Editar</a>
-          <a href="#" class="btn btn-danger">Eliminar</a>
-        </td>
-      </tr>
-
-      <!-- Agregar más filas según sea necesario -->
-    </tbody>
-  </table>
+  <div class="card mask-custom">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-borderless text-white mb-0 table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Numero de Documento</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Juan Pablo Sanchez</td>
+              <td>1098822469</td>
+              <td>
+                <a href="#" class="btn btn-outline-primary me-2 bi bi-pencil-square"> Editar</a>
+                <a href="#" class="btn btn-outline-danger bi bi-trash3"> Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Johan Sebastian Garcia</td>
+              <td>1096812465</td>
+              <td>
+                <a href="#" class="btn btn-outline-primary me-2 bi bi-pencil-square"> Editar</a>
+                <a href="#" class="btn btn-outline-danger bi bi-trash3"> Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+

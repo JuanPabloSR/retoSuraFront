@@ -8,12 +8,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

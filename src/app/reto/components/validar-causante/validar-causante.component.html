@@ -3,31 +3,34 @@
 
 <form [formGroup]="myForm" (ngSubmit)="consultar()">
   <!-- Tipo de documento -->
+
   <div class="mb-3">
-    <label class="mb-2">Tipo de Identificación</label>
+    <label class="mb-2 bi bi-person-vcard"> Tipo de Identificación</label>
     <select
       class="form-control"
       formControlName="tipoDocumento"
       id="tipoDocumento"
     >
+      <option value="" disabled selected>Seleccione un tipo</option>
       <option value="cedulaCiudadania">Cédula de ciudadanía</option>
       <option value="cedulaExtanjeria">Cédula de extranjería</option>
       <option value="pasaporte">Pasaporte</option>
     </select>
-    <span class="form-text text-danger" *ngIf="campoValido('tipoDocumento')">
+    <span errorSpan *ngIf="campoValido('tipoDocumento')">
       Debe seleccionar una opción
     </span>
   </div>
+
   <!-- Numero de documento -->
   <div class="mb-3">
-    <label class="mb-2">Número de Documento</label>
+    <label class="mb-2 bi bi-123"> Número de Documento</label>
     <input
       type="number"
       class="form-control"
       placeholder="Ingrese su número de documento"
       formControlName="documento"
     />
-    <span class="form-text text-danger" *ngIf="campoValido('documento')">
+    <span errorSpan *ngIf="campoValido('documento')">
       Este campo no puede estar vacío, debe tener mínimo 6 números
     </span>
   </div>
@@ -35,7 +38,7 @@
   <div class="mb-3">
     <button
       type="submit"
-      class="btn btn-primary mt-3 text-center"
+      class="btn btn-primary mt-3 bi bi-database-check"
       [disabled]="myForm.pending"
     >
       Consultar

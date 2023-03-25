@@ -9,33 +9,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistarCausanteComponent implements OnInit {
 
-  myForm: FormGroup = this.fb.group({
-    tipoDocumento: ['', [Validators.required]],
-    documento: ['', [Validators.required, Validators.pattern(/^\d{6,}$/)]],
-  })
 
-  constructor(private fb: FormBuilder, ) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.myForm.reset({
-      tipoDocumento: '',
-      documento: ''
-    });
+
   }
 
-  campoValido(field: string) {
-    return (
-      this.myForm.controls[field].errors && this.myForm.controls[field].touched
-    );
-  }
-
-  consultar() {
-    if (this.myForm.invalid) {
-      this.myForm.markAllAsTouched();
-      return;
-    }
-
-    console.log(this.myForm.value);
-  }
 
 }

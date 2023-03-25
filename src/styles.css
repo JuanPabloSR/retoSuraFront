@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+/* ESTILOS GENERALES */
+body {
+  color: white;
+}
+.bg-mi-color {
+  background-color: #214059; /* Cambia el valor para el color que desees */
+}
+
+/* NAVBAR */
+
+.nav-link.active {
+  color: #ebf0f5 !important;
+  border-bottom: 3px solid #2888ee;
+  border-radius: 10px;
+
+}
+.nav-link {
+  text-align: center;
+  color: #c6c6ca;
+}
+.nav-link:hover {
+  color: #ebf0f5;
+}
+
+.my-navbar {
+  background-color: #18181033 !important;
+  box-shadow: 0px 2px 10px rgba(233, 225, 225, 0.404) !important;
+}
+
+.navbar-toggler {
+  border-color: white;
+}
+
+
+/* FORMULARIOS */
+.ng-invalid.ng-touched {
+  border-color: rgba(216, 13, 13, 0.705);
+}
+
+.form-control:focus {
+  border-color: #073f64;
+  box-shadow: 0 0 0 0.25rem rgba(12, 99, 199, 0.5);
+}
+
+/* .ng-valid.ng-touched {
+  border-color: rgba(9, 59, 221, 0.616);
+} */
+
+/* TABLA LISTA CAUSANTES */
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mask-custom {
+  background: #18181033;
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid #ffffff0d;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px #2e364408;
+}

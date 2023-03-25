@@ -9,6 +9,7 @@ import { RegistarCausanteComponent } from './pages/registar-causante/registar-ca
 import { CalcularMesadaComponent } from './pages/calcular-mesada/calcular-mesada.component';
 import { ValidarCausanteComponent } from './components/validar-causante/validar-causante.component';
 import { AgregarCausanteComponent } from './components/agregar-causante/agregar-causante.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +23,10 @@ import { AgregarCausanteComponent } from './components/agregar-causante/agregar-
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RetoRoutingModule
-  ]
+    RetoRoutingModule,
+    SharedModule
+  ],
+
+
 })
 export class RetoModule { }
