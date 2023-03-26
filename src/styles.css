@@ -54,7 +54,7 @@ table th {
   overflow: hidden;
 }
 
-.mask-custom {
+.card-custom {
   background: #18181033;
   border-radius: 2em;
   backdrop-filter: blur(25px);
