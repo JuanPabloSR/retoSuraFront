@@ -20,6 +20,10 @@ export class NavbarComponent {
 
   menuItems: MenuItems[] = [
     {
+      ruta:'arus/validar-causantes',
+      nombre: 'Validar Causante'
+    },
+    {
       ruta:'arus/registrar-causante',
       nombre: 'Registrar Causante'
     },

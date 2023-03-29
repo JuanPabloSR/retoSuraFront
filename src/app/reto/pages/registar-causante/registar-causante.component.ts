@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registar-causante',
@@ -8,14 +7,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   ]
 })
 export class RegistarCausanteComponent implements OnInit {
+  mostrarAgregarBeneficiario = false;
 
-
+  onFormularioCompleto() {
+    this.mostrarAgregarBeneficiario = true;
+  }
 
   constructor() { }
 
   ngOnInit(): void {
 
   }
+
 
 
 }

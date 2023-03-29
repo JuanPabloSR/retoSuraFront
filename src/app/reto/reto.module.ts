@@ -10,6 +10,9 @@ import { CalcularMesadaComponent } from './pages/calcular-mesada/calcular-mesada
 import { ValidarCausanteComponent } from './components/validar-causante/validar-causante.component';
 import { AgregarCausanteComponent } from './components/agregar-causante/agregar-causante.component';
 import { SharedModule } from '../shared/shared.module';
+import { ValidarCausantesComponent } from './pages/validar-causantes/validar-causantes.component';
+import { AgregarBeneficiarioComponent } from './components/agregar-beneficiario/agregar-beneficiario.component';
+import { EditarCausantesComponent } from './pages/editar-causantes/editar-causantes.component';
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { SharedModule } from '../shared/shared.module';
     CalcularMesadaComponent,
     ValidarCausanteComponent,
     AgregarCausanteComponent,
+    ValidarCausantesComponent,
+    AgregarBeneficiarioComponent,
+    EditarCausantesComponent,
   ],
   imports: [
     CommonModule,

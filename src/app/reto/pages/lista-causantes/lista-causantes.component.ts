@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CausanteService } from '../../services/causante.service';
 
 @Component({
   selector: 'app-lista-causantes',
@@ -11,9 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaCausantesComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(    private router: Router,
+    private causanteService: CausanteService) { }
 
   ngOnInit(): void {
+
+  }
+
+  editarCausante(id: number) {
+    this.router.navigate(['/causantes/editar', id]);
   }
 
 }

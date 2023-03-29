@@ -11,7 +11,7 @@ export class ValidarCausanteComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
     tipoDocumento: ['', [Validators.required]],
-    documento: ['', [Validators.required, Validators.pattern(/^\d{6,}$/)]],
+    documento: ['', [Validators.required, Validators.pattern(/^\d{6,12}$/)]],
   })
   constructor(private fb: FormBuilder,) { }
 
