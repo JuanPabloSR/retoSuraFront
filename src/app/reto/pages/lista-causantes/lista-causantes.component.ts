@@ -22,7 +22,7 @@ export class ListaCausantesComponent implements OnInit {
   }
 
   editarCausante(id: number) {
-    this.router.navigate(['/causantes/editar', id]);
+    this.router.navigate(['/editar/causantes/', id]);
   }
 
 }
