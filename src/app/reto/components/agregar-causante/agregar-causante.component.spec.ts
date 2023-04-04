@@ -1,19 +1,19 @@
+import { AgregarCausanteComponent } from './agregar-causante.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { AgregarBeneficiarioComponent } from './agregar-beneficiario.component';
 
-describe('AgregarBeneficiarioComponent', () => {
-  let component: AgregarBeneficiarioComponent;
-  let fixture: ComponentFixture<AgregarBeneficiarioComponent>;
+describe('AgregarCausanteComponent', () => {
+  let component: AgregarCausanteComponent;
+  let fixture: ComponentFixture<AgregarCausanteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AgregarBeneficiarioComponent],
+      declarations: [AgregarCausanteComponent],
       imports: [ReactiveFormsModule],
       providers: [FormBuilder],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AgregarBeneficiarioComponent);
+    fixture = TestBed.createComponent(AgregarCausanteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -33,10 +33,7 @@ describe('AgregarBeneficiarioComponent', () => {
       nombres: '',
       apellidos: '',
       fechaNacimiento: '',
-      genero: '',
-      tipoBeneficiario: '',
-      estudiaActualmente: '',
-      dependeEconomicamente: ''
+      genero: ''
     };
     component.myForm.setValue(formData);
     component.agregar();
@@ -50,10 +47,7 @@ describe('AgregarBeneficiarioComponent', () => {
       nombres: 'Juan',
       apellidos: 'Pablo',
       fechaNacimiento: '30-08-1999',
-      genero: 'masculino',
-      tipoBeneficiario: 'hijo',
-      estudiaActualmente: 'si',
-      dependeEconomicamente: 'si'
+      genero: 'masculino'
     };
     component.myForm.setValue(formData);
     component.agregar();
@@ -77,6 +71,7 @@ describe('AgregarBeneficiarioComponent', () => {
     component.myForm.controls['tipoDocumento'].setValue('cedulaCiudadania');
     expect(component.campoValido('tipoDocumento')).toBeFalsy();
   });
+
 
   it('Debe validar el campo nombres', () => {
     component.myForm.controls['nombres'].setValue('');
@@ -106,26 +101,7 @@ describe('AgregarBeneficiarioComponent', () => {
     expect(component.campoValido('genero')).toBeFalsy();
   });
 
-  it('Debe validar el campo tipoBeneficiario', () => {
-    component.myForm.controls['tipoBeneficiario'].setValue('');
-    expect(component.campoValido('tipoBeneficiario')).toBeFalsy();
-    component.myForm.controls['tipoBeneficiario'].setValue('Estudiante');
-    expect(component.campoValido('tipoBeneficiario')).toBeFalsy();
-  });
 
-  it('Debe validar el campo estudiaActualmente', () => {
-    component.myForm.controls['estudiaActualmente'].setValue('');
-    expect(component.campoValido('estudiaActualmente')).toBeFalsy();
-    component.myForm.controls['estudiaActualmente'].setValue('No');
-    expect(component.campoValido('estudiaActualmente')).toBeFalsy();
-  });
-
-  it('Debe validar el campo dependeEconomicamente', () => {
-    component.myForm.controls['dependeEconomicamente'].setValue('');
-    expect(component.campoValido('dependeEconomicamente')).toBeFalsy();
-    component.myForm.controls['dependeEconomicamente'].setValue('No');
-    expect(component.campoValido('dependeEconomicamente')).toBeNull();
-  });
 
 
 });

@@ -48,6 +48,8 @@ export class AgregarBeneficiarioComponent implements OnInit {
     }
 
     console.log(this.myForm.value);
+    // this.myForm.markAsUntouched();
+    // this.myForm.markAsPristine();
   }
 
 }
